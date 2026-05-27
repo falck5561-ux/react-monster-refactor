@@ -1,16 +1,36 @@
-# React + Vite
+# 🧟 Mata al componente monstruo – Refactorización en React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene la solución al ejercicio de refactorización de un "componente monolítico" heredado (legacy code). El objetivo principal de este proyecto fue aplicar buenas prácticas de desarrollo con React moderno para convertir código espagueti en una arquitectura limpia, mantenible y escalable.
 
-Currently, two official plugins are available:
+## 🛠️ Tecnologías Utilizadas
+* React (con Vite)
+* Custom Hooks
+* Composición de Componentes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎯 Mejoras Implementadas
+1. **Separación de Responsabilidades:** Se extrajo la lógica de negocio y las llamadas asíncronas a *Custom Hooks* (`useDashboardData`, `useNotifications`, etc.).
+2. **Limpieza de Estado:** Se eliminaron múltiples `useEffect` innecesarios que se usaban para derivar estados.
+3. **Optimización de Rendimiento:** Se implementó `useMemo` para evitar que cálculos pesados bloqueen el hilo principal en cada renderizado.
+4. **Modularización de la Interfaz:** Se reemplazaron grandes bloques de JSX repetido por componentes reutilizables y puros (`<SummaryCard />`, `<Modal />`, etc.).
 
-## React Compiler
+## 🚀 Cómo ejecutar este proyecto localmente
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clona este repositorio:
+\`\`\`bash
+git clone https://github.com/falck5561-ux/react-monster-refactor.git
+\`\`\`
 
-## Expanding the ESLint configuration
+2. Entra a la carpeta del proyecto:
+\`\`\`bash
+cd react-monster-refactor
+\`\`\`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Instala las dependencias:
+\`\`\`bash
+npm install
+\`\`\`
+
+4. Inicia el servidor de desarrollo:
+\`\`\`bash
+npm run dev
+\`\`\`
